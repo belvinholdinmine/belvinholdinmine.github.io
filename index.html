@@ -1,7 +1,6 @@
-
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome - BelvinHoldinMine</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -10,37 +9,53 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #fff;
+      background: url('https://belvinholdinmine.github.io/assets/bg-team.jpg') no-repeat center center/cover;
       position: relative;
       overflow-x: hidden;
-    }body::before {
-  content: "₿   $   €   £   ₿   $   €   £";
-  font-size: 10rem;
-  color: rgba(255, 255, 255, 0.05);
+    }.overlay {
   position: absolute;
-  top: 20%;
-  left: 10%;
-  white-space: nowrap;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
-  animation: floatSymbols 20s linear infinite;
 }
 
-@keyframes floatSymbols {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-100%); }
+.crypto-ticker {
+  background-color: #111;
+  color: #f4db7d;
+  padding: 0.5rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 2;
+  position: relative;
+}
+
+.ticker-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollTicker 25s linear infinite;
+  font-size: 0.95rem;
+}
+
+@keyframes scrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
 .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.65);
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   max-width: 450px;
-  margin: 2rem auto;
+  margin: 4rem auto;
 }
 
 h1 {
@@ -73,10 +88,12 @@ p {
 }
 
 footer {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   padding: 2rem 1rem;
   text-align: center;
   margin-top: 3rem;
+  z-index: 2;
+  position: relative;
 }
 
 footer p, footer a {
@@ -100,6 +117,7 @@ footer a:hover {
   padding: 15px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   cursor: pointer;
+  z-index: 3;
 }
 
 .support-icon img {
@@ -110,7 +128,12 @@ footer a:hover {
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="overlay"></div>
+  <div class="crypto-ticker">
+    <div class="ticker-content" id="ticker">
+      Loading cryptocurrency prices...
+    </div>
+  </div>  <div class="container">
     <h1>Welcome to BelvinHoldinMine</h1>
     <p>Your trusted platform for smart and secure investment growth.</p>
     <a href="login.html" class="btn">Login</a>
@@ -123,6 +146,35 @@ footer a:hover {
     <a href="#">❓ Frequently Asked Questions (FAQs)</a>
     <a href="#">📞 Contact Us</a>
     <p>© 2025 BelvinHoldinMine. All rights reserved.</p>
-  </footer>
+  </footer>  <script>
+    async function loadCryptoPrices() {
+      try {
+        const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,tron&vs_currencies=usd");
+        const data = await res.json();
+        const ticker = document.getElementById("ticker");
+        ticker.innerHTML = `
+          BTC: $${data.bitcoin.usd.toLocaleString()} •
+          ETH: $${data.ethereum.usd.toLocaleString()} •
+          USDT: $${data.tether.usd.toLocaleString()} •
+          TRX: $${data.tron.usd.toLocaleString()}
+        `;
+      } catch (err) {
+        document.getElementById("ticker").textContent = "Error loading prices.";
+      }
+    }
+    loadCryptoPrices();
+    setInterval(loadCryptoPrices, 30000);
+  </script>  <!-- Smartsupp Live Chat script -->  <script type="text/javascript">
+    var _smartsupp = _smartsupp || {};
+    _smartsupp.key = '2d037513eb964a6b3f12f10ea322ff3ae48f0824';
+    window.smartsupp||(function(d) {
+      var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+      s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+      c.type='text/javascript';c.charset='utf-8';c.async=true;
+      c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+    })(document);
+  </script>  <noscript>
+    Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a>
+  </noscript>
 </body>
 </html>
