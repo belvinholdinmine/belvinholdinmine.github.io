@@ -3,44 +3,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BelvinHoldinMine</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome - BelvinHoldinMine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "₿   $   €   £   ₿   $   €   £";
+      font-size: 10rem;
+      color: rgba(255, 255, 255, 0.05);
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      white-space: nowrap;
+      z-index: 0;
+      animation: floatSymbols 20s linear infinite;
+    }
+
+    @keyframes floatSymbols {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100%); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #f4db7d;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: block;
+      background-color: #f4db7d;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffd500;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>BelvinHoldinMine</h1>
-    <p>Invest in Your Future Today</p>
-  </header>
-
-  <main>
-    <section class="welcome">
-      <h2>Welcome</h2>
-      <p>Welcome to BelvinHoldinMine – where vision meets opportunity. We help you grow your wealth through smart, transparent, and innovative investment strategies.</p>
-    </section>
-
-    <section class="about">
-      <h2>About Us</h2>
-      <p>BelvinHoldinMine is committed to providing strategic investment solutions designed to meet your financial goals. We believe in integrity, growth, and excellence.</p>
-    </section>
-
-    <section class="why">
-      <h2>Why Choose Us</h2>
-      <ul>
-        <li>✔ Transparent investment process</li>
-        <li>✔ Proven growth strategies</li>
-        <li>✔ 24/7 Support & guidance</li>
-      </ul>
-    </section>
-
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <p>Email: info@belvinholdinmine.com</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 BelvinHoldinMine. All rights reserved.</p>
-  </footer>
+  <div class="container">
+    <h1>Welcome to BelvinHoldinMine</h1>
+    <p>Your trusted platform for smart and secure investment growth.</p>
+    <a href="login.html" class="btn">Login</a>
+    <a href="signup.html" class="btn">Create Account</a>
+  </div>
 </body>
 </html>
