@@ -1,9 +1,8 @@
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome - BelvinHoldinMine</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -11,73 +10,103 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #fff;
       position: relative;
-      overflow: hidden;
-    }
+      overflow-x: hidden;
+    }body::before {
+  content: "₿   $   €   £   ₿   $   €   £";
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  white-space: nowrap;
+  z-index: 0;
+  animation: floatSymbols 20s linear infinite;
+}
 
-    body::before {
-      content: "₿   $   €   £   ₿   $   €   £";
-      font-size: 10rem;
-      color: rgba(255, 255, 255, 0.05);
-      position: absolute;
-      top: 20%;
-      left: 10%;
-      white-space: nowrap;
-      z-index: 0;
-      animation: floatSymbols 20s linear infinite;
-    }
+@keyframes floatSymbols {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
 
-    @keyframes floatSymbols {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-100%); }
-    }
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  margin: 2rem auto;
+}
 
-    .container {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      max-width: 400px;
-      width: 90%;
-    }
+h1 {
+  color: #f4db7d;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
-    h1 {
-      color: #f4db7d;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
 
-    p {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
+.btn {
+  display: block;
+  background-color: #f4db7d;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
 
-    .btn {
-      display: block;
-      background-color: #f4db7d;
-      color: #333;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      padding: 0.75rem;
-      margin: 0.5rem 0;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
+.btn:hover {
+  background-color: #ffd500;
+}
 
-    .btn:hover {
-      background-color: #ffd500;
-    }
+footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+footer p, footer a {
+  color: #ccc;
+  margin: 0.3rem 0;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.support-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f4db7d;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.support-icon img {
+  width: 24px;
+  height: 24px;
+}
+
   </style>
 </head>
 <body>
@@ -86,6 +115,14 @@
     <p>Your trusted platform for smart and secure investment growth.</p>
     <a href="login.html" class="btn">Login</a>
     <a href="signup.html" class="btn">Create Account</a>
-  </div>
+  </div>  <div class="support-icon" title="Chat with support">
+    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="support icon"></a>
+  </div>  <footer>
+    <p>📧 support@belvinholdinmine.com</p>
+    <a href="#">📄 Terms and Conditions</a>
+    <a href="#">❓ Frequently Asked Questions (FAQs)</a>
+    <a href="#">📞 Contact Us</a>
+    <p>© 2025 BelvinHoldinMine. All rights reserved.</p>
+  </footer>
 </body>
 </html>
