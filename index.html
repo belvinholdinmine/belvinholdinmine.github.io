@@ -1,143 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BelvinHoldinMine - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BelvinHoldinMine - Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('https://i.ibb.co/w0Xdqzv/investors-bg.jpg') center/cover no-repeat fixed;
+      background: url('https://i.ibb.co/w0Xdqzv/investors-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
     }
     header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.85);
-      padding: 1rem 2rem;
       flex-wrap: wrap;
     }
     .logo {
-      font-size: 1.5rem;
-      color: #ffd700;
-      font-weight: bold;
-    }
-    nav {
-      margin-top: 10px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #FFD700;
     }
     nav a {
-      color: #fff;
-      margin: 0 10px;
+      margin-left: 15px;
       text-decoration: none;
+      color: #fff;
       font-weight: 500;
     }
     .translate-box {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      z-index: 999;
     }
-    .scrolling-message {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem;
+    .welcome-section {
       text-align: center;
-      overflow: hidden;
-      height: 3rem;
+      margin-top: 3rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
     }
-    .scrolling-message p {
-      animation: scrollUp 10s linear infinite;
+    .welcome-section h1 {
+      font-size: 2rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .scroll-text {
+      height: 60px;
+      overflow: hidden;
+      position: relative;
+    }
+    .scroll-text p {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       margin: 0;
-      font-size: 1rem;
-      color: #ffd700;
+      line-height: 60px;
+      animation: scrollUp 10s linear infinite;
     }
     @keyframes scrollUp {
       0% { transform: translateY(100%); }
       100% { transform: translateY(-100%); }
     }
     .crypto-ticker {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      margin-top: 1rem;
     }
-    .plans-section {
-      padding: 2rem 1rem;
+    .plans {
       display: flex;
-      gap: 1.5rem;
       justify-content: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      background-color: rgba(0, 0, 0, 0.7);
-      margin: 2rem 1rem;
-      border-radius: 12px;
+      padding: 3rem 1rem;
+      background: rgba(0, 0, 0, 0.7);
     }
-    .plan-box {
+    .plan {
       background-color: #222;
-      border: 1px solid #333;
+      border: 1px solid #444;
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 2rem;
       width: 280px;
       text-align: center;
-      transition: 0.3s;
     }
-    .plan-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    .plan-box h3 {
+    .plan h3 {
       color: #00d1b2;
       margin-bottom: 10px;
     }
-    .plan-box p {
-      margin: 0.5rem 0;
-      line-height: 1.4;
+    .plan p {
+      margin-bottom: 5px;
     }
     footer {
-      background-color: rgba(0, 0, 0, 0.85);
+      background-color: rgba(0, 0, 0, 0.9);
       padding: 1rem;
       text-align: center;
     }
     .footer-links a {
       color: #bbb;
-      margin: 0 10px;
       text-decoration: none;
+      margin: 0 10px;
     }
-
     @media (max-width: 600px) {
       nav {
+        margin-top: 10px;
         width: 100%;
         text-align: center;
-        margin-top: 0.5rem;
       }
-      nav a {
-        display: inline-block;
-        margin: 8px 5px;
-      }
-      .plans-section {
+      .plans {
         flex-direction: column;
         align-items: center;
       }
     }
   </style>
 </head>
-<body>
-
-  <!-- 🌍 Google Translate -->
-  <div class="translate-box" id="google_translate_element"></div>
+<body>  <!-- Google Translate -->  <div class="translate-box" id="google_translate_element"></div>
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- 🔝 Navigation -->
-  <header>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>  <header>
     <div class="logo">BelvinHoldinMine</div>
     <nav>
       <a href="index.html">Home</a>
@@ -146,50 +132,38 @@
       <a href="contact.html">Contact</a>
       <a href="terms.html">Terms</a>
     </nav>
-  </header>
-
-  <!-- 📜 Vertical Scrolling Welcome Message -->
-  <div class="scrolling-message">
-    <p>BelvinHoldinMine is your trusted gateway to stock, crypto, and real estate investments. We offer daily returns, transparent reports, crypto updates, and real support. Grow your wealth the professional way with BelvinHoldinMine!</p>
-  </div>
-
-  <!-- 📈 Crypto Price Ticker -->
-  <div class="crypto-ticker">
-    📊 BTC: $67,350 | ETH: $3,550 | TRX: $0.12 (Live prices updating soon)
-  </div>
-
-  <!-- 💼 Investment Plans -->
-  <section class="plans-section">
-    <div class="plan-box">
-      <h3>📈 Starter Plan</h3>
-      <p>3% daily for 7 days</p>
+  </header>  <section class="welcome-section">
+    <h1>Welcome to BelvinHoldinMine</h1>
+    <div class="scroll-text">
+      <p>BelvinHoldinMine is your trusted gateway to stock, crypto, and real estate investments. We offer daily returns, transparent reports, crypto updates, and real support. Grow your wealth the professional way with BelvinHoldinMine!</p>
+    </div>
+  </section>  <div class="crypto-ticker">
+    📊 BTC: $67,350 | ETH: $3,550 | TRX: $0.12 (Live update placeholder)
+  </div>  <section class="plans">
+    <div class="plan">
+      <h3>Starter Plan</h3>
+      <p>💸 3% daily for 7 days</p>
       <p>Min: $200 | Max: $4,999</p>
     </div>
-    <div class="plan-box">
-      <h3>🚀 Growth Plan</h3>
-      <p>5% daily for 14 days</p>
+    <div class="plan">
+      <h3>Growth Plan</h3>
+      <p>📈 5% daily for 14 days</p>
       <p>Min: $5,000 | Max: $19,999</p>
     </div>
-    <div class="plan-box">
-      <h3>👑 Elite Plan</h3>
-      <p>13% daily for 30 days</p>
+    <div class="plan">
+      <h3>Elite Plan</h3>
+      <p>👑 13% daily for 30 days</p>
       <p>Min: $20,000 | Max: Unlimited</p>
     </div>
-  </section>
-
-  <!-- 🔻 Footer -->
-  <footer>
+  </section>  <footer>
     <div class="footer-links">
-      <a href="contact.html">Contact</a> |
-      <a href="faq.html">FAQs</a> |
-      <a href="terms.html">Terms & Conditions</a> |
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQs</a>
+      <a href="terms.html">Terms</a>
       <a href="about.html">About Us</a>
     </div>
     <p>&copy; 2025 BelvinHoldinMine. All rights reserved.</p>
-  </footer>
-
-  <!-- 💬 Smartsupp Live Chat -->
-  <script type="text/javascript">
+  </footer>  <!-- Smartsupp Chat -->  <script type="text/javascript">
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = '2d037513eb964a6b3f12f10ea322ff3ae48f0824';
     window.smartsupp||(function(d) {
@@ -198,7 +172,5 @@
       c.type='text/javascript';c.charset='utf-8';c.async=true;
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
     })(document);
-  </script>
-
-</body>
+  </script></body>
 </html>
