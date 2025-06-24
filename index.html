@@ -1,172 +1,170 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome - BelvinHoldinMine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BelvinHoldinMine - Home</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Poppins', sans-serif;
+      background: url('https://i.ibb.co/w0Xdqzv/investors-bg.jpg') center/cover no-repeat fixed;
       color: #fff;
-      background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      position: relative;
-      overflow-x: hidden;
     }
-    .overlay {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      color: #ffd700;
+      font-weight: bold;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .translate-box {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+    }
+    .scrolling-message {
       background: rgba(0, 0, 0, 0.7);
-      z-index: 0;
-    }
-    .container {
-      position: relative;
-      z-index: 2;
+      padding: 1rem;
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      border-radius: 15px;
-      max-width: 550px;
-      margin: 4rem auto;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-    h1 {
-      color: #f4db7d;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .scroll-message {
-      height: 90px;
       overflow: hidden;
-      position: relative;
-      margin-top: 1.5rem;
+      height: 3rem;
     }
-    .scroll-message p {
-      position: absolute;
-      width: 100%;
-      animation: scrollUp 15s linear infinite;
+    .scrolling-message p {
+      animation: scrollUp 10s linear infinite;
+      margin: 0;
       font-size: 1rem;
-      padding: 0 1rem;
-      color: #eee;
-      line-height: 1.5;
+      color: #ffd700;
     }
     @keyframes scrollUp {
-      0% { top: 100%; }
-      100% { top: -100%; }
+      0% { transform: translateY(100%); }
+      100% { transform: translateY(-100%); }
     }
-    .btn {
-      display: block;
-      background-color: #f4db7d;
-      color: #333;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      padding: 0.75rem;
-      margin: 1.2rem auto 0.5rem;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #ffd500;
-    }
-
     .crypto-ticker {
-      background-color: #111;
-      overflow: hidden;
-      white-space: nowrap;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      z-index: 2;
-      position: relative;
-    }
-
-    .crypto-content {
-      display: inline-block;
-      padding-left: 100%;
-      animation: scrollLeft 20s linear infinite;
-      color: #f4db7d;
-      font-size: 1rem;
-      padding: 10px 0;
-    }
-
-    @keyframes scrollLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
-    footer {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem;
       text-align: center;
-      margin-top: 3rem;
-      z-index: 2;
-      position: relative;
-    }
-    footer p, footer a {
-      color: #ccc;
-      margin: 0.3rem 0;
-      text-decoration: none;
-      display: block;
       font-size: 0.9rem;
     }
-    footer a:hover {
-      text-decoration: underline;
+    .plans-section {
+      padding: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 2rem;
+      border-radius: 12px;
+    }
+    .plan-box {
+      background-color: #222;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 280px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .plan-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+    .plan-box h3 {
+      color: #00d1b2;
+    }
+    .plan-box p {
+      margin: 0.5rem 0;
+      line-height: 1.4;
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .footer-links a {
+      color: #bbb;
+      margin: 0 10px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
 
-  <div class="crypto-ticker">
-    <div class="crypto-content" id="ticker">Loading crypto prices...</div>
-  </div>
-
-  <div class="container">
-    <h1>Welcome to BelvinHoldinMine</h1>
-    <div class="scroll-message">
-      <p>At BelvinHoldinMine, we prioritize secure, transparent, and high-yield investment solutions tailored for modern investors. With consistent daily returns, market-driven strategies, and real-time portfolio monitoring, we empower our clients to grow their wealth confidently. Partner with a platform built on integrity, innovation, and investor success.</p>
-    </div>
-    <a href="login.html" class="btn">Login</a>
-    <a href="signup.html" class="btn">Create Account</a>
-  </div>
-
-  <!-- Footer section -->
-<footer>
-  <div class="footer-links">
-    <a href="contact.html">Contact</a> |
-    <a href="faq.html">FAQs</a> |
-    <a href="terms.html">Terms & Conditions</a>
-  </div>
-  <p>&copy; 2025 BelvinHoldinMine. All rights reserved.</p>
-</footer>
-  <script>
-    async function loadCryptoPrices() {
-      try {
-        const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,tron&vs_currencies=usd");
-        const data = await res.json();
-        const ticker = document.getElementById("ticker");
-        ticker.innerHTML = `
-          🔸 BTC: $${data.bitcoin.usd.toLocaleString()} 
-          🔸 ETH: $${data.ethereum.usd.toLocaleString()} 
-          🔸 USDT: $${data.tether.usd.toLocaleString()} 
-          🔸 TRX: $${data.tron.usd.toLocaleString()} 
-          🔸 BTC: $${data.bitcoin.usd.toLocaleString()} 
-          🔸 ETH: $${data.ethereum.usd.toLocaleString()} 
-        `;
-      } catch (err) {
-        document.getElementById("ticker").textContent = "Error loading prices.";
-      }
+  <!-- 🌍 Google Translate -->
+  <div class="translate-box" id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
-    loadCryptoPrices();
-    setInterval(loadCryptoPrices, 30000);
   </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-  <!-- SmartSupp Live Chat -->
+  <!-- 🔝 Navigation -->
+  <header>
+    <div class="logo">BelvinHoldinMine</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQs</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <!-- 📜 Vertical Scrolling Welcome Message -->
+  <div class="scrolling-message">
+    <p>BelvinHoldinMine is your trusted gateway to stock, crypto, and real estate investments. We offer daily returns, transparent reports, crypto updates, and real support. Grow your wealth the professional way with BelvinHoldinMine!</p>
+  </div>
+
+  <!-- 📈 Crypto Price Ticker -->
+  <div class="crypto-ticker">
+    📊 BTC: $67,350 | ETH: $3,550 | TRX: $0.12 (Live prices updating soon)
+  </div>
+
+  <!-- 💼 Investment Plans -->
+  <section class="plans-section">
+    <div class="plan-box">
+      <h3>📈 Starter Plan</h3>
+      <p>3% daily for 7 days</p>
+      <p>Min: $200 | Max: $4,999</p>
+    </div>
+    <div class="plan-box">
+      <h3>🚀 Growth Plan</h3>
+      <p>5% daily for 14 days</p>
+      <p>Min: $5,000 | Max: $19,999</p>
+    </div>
+    <div class="plan-box">
+      <h3>👑 Elite Plan</h3>
+      <p>13% daily for 30 days</p>
+      <p>Min: $20,000 | Max: Unlimited</p>
+    </div>
+  </section>
+
+  <!-- 🔻 Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="contact.html">Contact</a> |
+      <a href="faq.html">FAQs</a> |
+      <a href="terms.html">Terms & Conditions</a> |
+      <a href="about.html">About Us</a>
+    </div>
+    <p>&copy; 2025 BelvinHoldinMine. All rights reserved.</p>
+  </footer>
+
+  <!-- 💬 Smartsupp Live Chat -->
   <script type="text/javascript">
     var _smartsupp = _smartsupp || {};
     _smartsupp.key = '2d037513eb964a6b3f12f10ea322ff3ae48f0824';
@@ -177,5 +175,6 @@
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
     })(document);
   </script>
+
 </body>
-</html>
+    </html>
