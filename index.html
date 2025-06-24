@@ -10,7 +10,7 @@
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: #fff;
-      background: url('https://images.unsplash.com/photo-1622631021841-e4e11b0b62e4?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
     }
     .translate-wrapper {
@@ -57,13 +57,18 @@
       height: 60px;
       overflow: hidden;
       position: relative;
+      background-color: rgba(0,0,0,0.8);
+      border: 1px solid #FFD700;
+      border-radius: 8px;
+      margin-top: 1rem;
     }
     .scroll-text p {
       position: absolute;
       width: 100%;
-      line-height: 60px;
-      animation: scrollUp 10s linear infinite;
-      white-space: nowrap;
+      animation: scrollUp 15s linear infinite;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding: 0.5rem;
     }
     @keyframes scrollUp {
       0% { top: 100%; }
@@ -149,7 +154,11 @@
   </header>  <section class="welcome-section">
     <h1>Welcome to BelvinHoldinMine</h1>
     <div class="scroll-text">
-      <p>BelvinHoldinMine is your trusted gateway to stock, crypto, and real estate investments. We offer daily returns, transparent reports, crypto updates, and real support. Grow your wealth the professional way with BelvinHoldinMine!</p>
+      <p>
+        BelvinHoldinMine is your trusted gateway to stock, crypto, and real estate investments. 
+        We offer daily returns, transparent reports, live crypto updates, and real human support.
+        Join thousands of investors who are growing their money with us every single day!
+      </p>
     </div>
   </section>  <div class="crypto-ticker">
     <span>📊 BTC: $67,350 | ETH: $3,550 | TRX: $0.12 | DOGE: $0.14 | XRP: $0.65 | USDT: $1.00</span>
@@ -187,4 +196,4 @@
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
     })(document);
   </script></body>
-        </html>
+    </html>
