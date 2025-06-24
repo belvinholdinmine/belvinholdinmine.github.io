@@ -8,36 +8,38 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('https://i.ibb.co/w0Xdqzv/investors-bg.jpg') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1622631021841-e4e11b0b62e4?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
+    }
+    .translate-wrapper {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 0.3rem 1rem;
+      text-align: right;
+      position: fixed;
+      top: 0;
+      z-index: 9999;
     }
     header {
       background-color: rgba(0, 0, 0, 0.8);
       padding: 1rem 2rem;
+      padding-top: 3.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      position: relative;
     }
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
       color: #FFD700;
-      z-index: 1;
     }
     nav a {
       margin-left: 15px;
       text-decoration: none;
       color: #fff;
       font-weight: 500;
-    }
-    .translate-box {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      z-index: 10;
     }
     .welcome-section {
       text-align: center;
@@ -120,7 +122,9 @@
     }
   </style>
 </head>
-<body>  <!-- Google Translate -->  <div class="translate-box" id="google_translate_element"></div>
+<body>  <!-- Google Translate -->  <div class="translate-wrapper">
+    <div id="google_translate_element"></div>
+  </div>
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -176,4 +180,4 @@
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
     })(document);
   </script></body>
-</html>
+        </html>
