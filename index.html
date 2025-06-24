@@ -19,11 +19,13 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      position: relative;
     }
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
       color: #FFD700;
+      z-index: 1;
     }
     nav a {
       margin-left: 15px;
@@ -34,7 +36,8 @@
     .translate-box {
       position: absolute;
       top: 1rem;
-      right: 1rem;
+      left: 1rem;
+      z-index: 10;
     }
     .welcome-section {
       text-align: center;
