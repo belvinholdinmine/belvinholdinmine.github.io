@@ -78,6 +78,7 @@
       background: rgba(0, 0, 0, 0.7);
       overflow: hidden;
       white-space: nowrap;
+      padding: 0.5rem 1rem;
     }
     .crypto-ticker span {
       display: inline-block;
@@ -161,8 +162,19 @@
       </p>
     </div>
   </section>  <div class="crypto-ticker">
-    <span>📊 BTC: $67,350 | ETH: $3,550 | TRX: $0.12 | DOGE: $0.14 | XRP: $0.65 | USDT: $1.00</span>
-  </div>  <section class="plans">
+    <span id="btc-price">📊 BTC: Loading...</span>
+  </div>
+  <script>
+    fetch('https://api.coindesk.com/v1/bpi/currentprice/BTC.json')
+      .then(res => res.json())
+      .then(data => {
+        const btcPrice = data.bpi.USD.rate;
+        document.getElementById('btc-price').textContent = `📊 BTC: $${btcPrice}`;
+      })
+      .catch(() => {
+        document.getElementById('btc-price').textContent = "📊 BTC: Unavailable";
+      });
+  </script>  <section class="plans">
     <div class="plan">
       <h3>Starter Plan</h3>
       <p>💸 3% daily for 7 days</p>
@@ -196,4 +208,4 @@
       c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
     })(document);
   </script></body>
-    </html>
+  </html>
